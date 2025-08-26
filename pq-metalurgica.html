@@ -961,6 +961,53 @@
 
 
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+        }
+
+        .whatsapp-float.show {
+            display: flex;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .whatsapp-float i {
+            color: white;
+        }
+
+        /* Only show on mobile */
+        @media (min-width: 769px) {
+            .whatsapp-float {
+                display: none !important;
+            }
+        }
+
         /* Industrial Grid Pattern */
         .grid-bg {
             position: relative;
@@ -1259,6 +1306,14 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/59894510155?text=Hola%20PQ%20METALÚRGICA,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20estructuras%20metálicas%20y%20mobiliario%20a%20medida." 
+       target="_blank" 
+       class="whatsapp-float" 
+       id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1310,6 +1365,36 @@
         window.addEventListener('load', () => {
             document.body.style.opacity = '1';
         });
+
+        // Floating WhatsApp Button Logic
+        const whatsappFloat = document.getElementById('whatsappFloat');
+        const heroSection = document.getElementById('inicio');
+        const contactSection = document.getElementById('contacto');
+
+        function toggleWhatsAppButton() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const contactTop = contactSection.offsetTop;
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // Show button when user scrolls past hero section but before contact section (only on mobile)
+            if (scrollTop >= heroBottom && 
+                scrollTop < (contactTop - windowHeight / 2) && 
+                window.innerWidth <= 768) {
+                whatsappFloat.classList.add('show');
+            } else {
+                whatsappFloat.classList.remove('show');
+            }
+        }
+
+        // Check on scroll
+        window.addEventListener('scroll', toggleWhatsAppButton);
+        
+        // Check on resize (in case user changes orientation)
+        window.addEventListener('resize', toggleWhatsAppButton);
+        
+        // Initial check
+        toggleWhatsAppButton();
     </script>
 </body>
 
