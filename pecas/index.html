@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecas Burgers - Hamburguesas Veganas en Montevideo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster:wght@400&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Color System */
+            --primary-burgundy: #C41E3A;
+            --primary-burgundy-dark: #A0152B;
+            --primary-orange: #F59E0B;
+            --primary-orange-dark: #D97706;
+            --text-primary: #0F172A;
+            --text-secondary: #1E293B;
+            --text-muted: #475569;
+            --text-light: #64748B;
+            --background-primary: #FFFFFF;
+            --background-light: #F8FAFC;
+            --background-lighter: #F1F5F9;
+            --border-color: #E2E8F0;
+            --shadow-light: rgba(0,0,0,0.04);
+            --shadow-medium: rgba(0,0,0,0.08);
+            --shadow-heavy: rgba(0,0,0,0.15);
+            
+            /* Typography Scale */
+            --text-xs: 0.9rem;
+            --text-sm: 1rem;
+            --text-base: 1.1rem;
+            --text-lg: 1.2rem;
+            --text-xl: 1.3rem;
+            --text-2xl: 1.6rem;
+            --text-3xl: 2.2rem;
+            --text-4xl: 2.5rem;
+            --text-5xl: 3.2rem;
+            
+            /* Spacing Scale */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 5rem;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background-color: var(--background-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-burgundy);
+            color: white;
+            padding: var(--space-sm) 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(5, 150, 105, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Lobster', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            letter-spacing: normal;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--background-light), var(--background-lighter));
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            line-height: 1.2;
+            letter-spacing: normal;
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            color: var(--text-muted);
+            margin-bottom: var(--space-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .cta-primary {
+            background: var(--primary-orange);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--text-base);
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+            letter-spacing: normal;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(245, 158, 11, 0.4);
+            background: var(--primary-orange-dark);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--background-primary);
+        }
+
+        .section-title {
+            font-family: 'Lobster', cursive;
+            font-size: 2.8rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            letter-spacing: normal;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: var(--text-lg);
+            color: var(--text-light);
+            margin-bottom: var(--space-xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--shadow-light);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary-burgundy);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(139, 21, 56, 0.15);
+        }
+
+        .benefit-icon {
+            margin-bottom: var(--space-sm);
+            display: flex;
+            justify-content: center;
+        }
+
+        .benefit-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--primary-burgundy);
+            letter-spacing: normal;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--background-light), var(--background-lighter));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .product-card {
+            background: var(--background-primary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: 0 8px 40px var(--shadow-medium);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 80px var(--shadow-heavy);
+        }
+
+        .product-image {
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: var(--space-lg);
+        }
+
+        .product-name {
+            font-family: 'Lobster', cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+            text-align: center;
+            letter-spacing: normal;
+        }
+
+        .product-description {
+            margin-bottom: var(--space-md);
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .ingredients {
+            margin-bottom: var(--space-lg);
+        }
+
+        .ingredients h4 {
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            color: var(--primary-burgundy);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredients li {
+            padding: 3px 0;
+            font-size: var(--text-xs);
+            color: var(--text-light);
+        }
+
+        .ingredients li:before {
+            content: "• ";
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .product-cta {
+            background: var(--primary-burgundy);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            letter-spacing: normal;
+        }
+
+        .product-cta:hover {
+            background: var(--primary-burgundy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 21, 56, 0.3);
+        }
+
+        /* Coming Soon */
+        .coming-soon {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            padding: var(--space-xl);
+            background: var(--background-primary);
+            border-radius: var(--radius-xl);
+            border: 2px dashed #CBD5E1;
+        }
+
+        .coming-soon h3 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-orange);
+            margin-bottom: var(--space-sm);
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--background-light), var(--background-lighter));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .testimonial-card {
+            background: var(--background-primary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-burgundy);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+        }
+
+        .stars {
+            color: var(--primary-orange);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Process */
+        .process {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--background-light), var(--background-lighter));
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: var(--space-lg);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-burgundy);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 auto var(--space-sm);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .step-icon {
+            margin-bottom: var(--space-sm);
+            display: flex;
+            justify-content: center;
+        }
+
+        .step-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+            letter-spacing: normal;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: var(--background-primary);
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: var(--space-lg);
+            justify-content: center;
+            margin: var(--space-xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 15px 30px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--text-base);
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: normal;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #F56040, #E91E63, #9C27B0);
+            color: white;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--shadow-heavy);
+        }
+
+        .contact-info {
+            margin-top: var(--space-lg);
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: var(--space-xl) 0 var(--space-lg);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--space-sm);
+            color: #FF6B8A;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+
+        .footer-section a {
+            color: #94A3B8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--space-xs);
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FF6B8A;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: var(--space-lg);
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .hero p {
+                font-size: var(--text-base);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span style="font-size: 2rem;">🍔</span>
+                    PECAS BURGERS
+                </div>
+                <nav class="nav-links">
+                    <a href="#productos">Productos</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hamburguesas que alimentan tu cuerpo y tu conciencia</h1>
+            <p>Descubrí el sabor auténtico de las hamburguesas 100% veganas. Hechas con amor, ingredientes naturales y sin comprometer el planeta.</p>
+            <a href="https://wa.me/59891601090" class="cta-primary" target="_blank">
+                <i class="fas fa-shopping-cart"></i>
+                PEDÍ AHORA POR WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Más que hamburguesas, es un estilo de vida</h2>
+            <p class="section-subtitle">En Pecas Burgers creemos que comer bien no significa renunciar al sabor. Nuestras hamburguesas veganas están cargadas de proteínas vegetales, fibra y todos los nutrientes que tu cuerpo necesita.</p>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="benefit-title">100% Plant-Based</h3>
+                    <p>Ingredientes naturales, sin productos de origen animal. Bueno para vos, bueno para el planeta.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dumbbell" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="benefit-title">Alto en Proteínas</h3>
+                    <p>Lentejas y garbanzos que te dan la energía que necesitás sin pesadez.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="benefit-title">Sabor Auténtico</h3>
+                    <p>Especias seleccionadas y técnicas artesanales para un sabor inolvidable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestras Estrellas Veganas</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🍔</div>
+                    <div class="product-content">
+                        <h3 class="product-name">"La Clásica Verde"</h3>
+                        <h4 style="color: var(--primary-burgundy); margin-bottom: 1rem;">Hamburguesa de Lentejas</h4>
+                        <p class="product-description">Nuestra hamburguesa insignia. Base de lentejas rojas con semillas de lino y chía para ese toque crujiente. Avena que aporta cremosidad y verduritas frescas que explotan en tu boca.</p>
+                        
+                        <div class="ingredients">
+                            <h4>Ingredientes destacados:</h4>
+                            <ul>
+                                <li>Lentejas rojas orgánicas</li>
+                                <li>Semillas de lino y chía</li>
+                                <li>Avena integral</li>
+                                <li>Verduras de estación</li>
+                                <li>Blend de especias secreto</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="https://wa.me/59891601090?text=Hola! Quiero pedir La Clásica Verde" class="product-cta" target="_blank">Pedí La Clásica Verde</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🍔</div>
+                    <div class="product-content">
+                        <h3 class="product-name">"La Mediterránea"</h3>
+                        <h4 style="color: var(--primary-burgundy); margin-bottom: 1rem;">Hamburguesa de Garbanzos</h4>
+                        <p class="product-description">Inspirada en los sabores del mediterráneo. Garbanzos cremosos combinados con la textura perfecta de nuestras semillas y el frescor de vegetales seleccionados.</p>
+                        
+                        <div class="ingredients">
+                            <h4>Ingredientes destacados:</h4>
+                            <ul>
+                                <li>Garbanzos premium</li>
+                                <li>Semillas de lino y chía</li>
+                                <li>Avena integral</li>
+                                <li>Verduras mediterráneas</li>
+                                <li>Especias aromáticas</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="https://wa.me/59891601090?text=Hola! Quiero pedir La Mediterránea" class="product-cta" target="_blank">Pedí La Mediterránea</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coming-soon">
+                <h3>Próximamente...</h3>
+                <p>Estamos trabajando en nuevas recetas increíbles. ¡Seguinos en Instagram para ser el primero en probarlas!</p>
+                <a href="https://instagram.com/belu_jaimes_" target="_blank" style="color: var(--primary-orange); text-decoration: none; font-weight: 500;">@belu_jaimes_</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Pedí en 3 pasos súper fáciles</h2>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-phone" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="step-title">Contactanos</h3>
+                    <p>Escribinos por WhatsApp o Instagram</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="step-title">Elegí tu favorita</h3>
+                    <p>Contanos cuántas hamburguesas querés</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-truck" style="font-size: 48px; color: var(--primary-burgundy);"></i>
+                    </div>
+                    <h3 class="step-title">Recibí en tu casa</h3>
+                    <p>Coordinamos la entrega en el horario que prefieras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para la mejor hamburguesa vegana de tu vida?</h2>
+            
+            <div class="contact-buttons">
+                <a href="https://wa.me/59891601090" class="contact-btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    PEDÍ POR WHATSAPP
+                </a>
+                <a href="https://instagram.com/belu_jaimes_" class="contact-btn instagram-btn" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    SEGUINOS EN INSTAGRAM
+                </a>
+            </div>
+            
+            <div class="contact-info">
+                <p><strong>Horarios de atención:</strong><br>
+                Lunes a Domingo: 18:00 a 22:00hs</p>
+                <p><strong>Zona de entrega:</strong><br>
+                Montevideo y área metropolitana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"No puedo creer lo sabrosas que son. Soy carnívoro de toda la vida y estas hamburguesas me conquistaron completamente. La de lentejas es mi favorita."</p>
+                    <p class="testimonial-author">- Martín R., Montevideo</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Finalmente encontré hamburguesas veganas que no saben a cartón. La textura es perfecta y los sabores súper balanceados. Las recomiendo 100%."</p>
+                    <p class="testimonial-author">- Sofía M., Pocitos</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Mis hijos las devoran sin saber que son veganas. Para mí eso lo dice todo. Pecas Burgers es mi salvación para las cenas rápidas y saludables."</p>
+                    <p class="testimonial-author">- Carolina L., Punta Carretas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pecas Burgers</h4>
+                    <a href="#productos">Nuestros Productos</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <a href="https://wa.me/59891601090" target="_blank">WhatsApp: 091601090</a>
+                    <a href="https://instagram.com/belu_jaimes_" target="_blank">Instagram: @belu_jaimes_</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <a href="#">Sobre Nosotros</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Pecas Burgers.<br/>Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
