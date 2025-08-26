@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQ METALURGICA - Estructuras Metálicas y Mobiliario a Medida | Montevideo, Uruguay</title>
+    <meta name="description"
+        content="Fabricación de estructuras metálicas y mobiliario único diseñado y fabricado a la medida en Montevideo, Uruguay. Calidad, precisión y durabilidad.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Industrial Color Palette */
+            --steel-dark: #2D3748;
+            --steel-medium: #4A5568;
+            --steel-light: #718096;
+            --iron-black: #1A202C;
+            --iron-gray: #2D3748;
+            --forge-orange: #FF6B35;
+            --forge-yellow: #F7931E;
+            --spark-white: #FFFFFF;
+            --metal-silver: #E2E8F0;
+            --rust-red: #C53030;
+            --industrial-blue: #2B6CB0;
+            --safety-yellow: #F6E05E;
+
+            /* Typography */
+            --font-tech: 'Orbitron', monospace;
+            --font-body: 'Inter', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+
+            /* Effects */
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--steel-dark);
+            background: var(--spark-white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 32, 44, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-tech);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--forge-orange);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--forge-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--metal-silver);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--forge-orange);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--forge-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--iron-black) 0%, var(--steel-dark) 50%, var(--iron-gray) 100%);
+            color: var(--spark-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23FF6B35" opacity="0.3"/><circle cx="60" cy="40" r="0.5" fill="%23F7931E" opacity="0.4"/><circle cx="80" cy="70" r="1.5" fill="%23FF6B35" opacity="0.2"/><circle cx="30" cy="80" r="0.8" fill="%23F7931E" opacity="0.5"/><circle cx="90" cy="20" r="1.2" fill="%23FF6B35" opacity="0.3"/></svg>') repeat;
+            animation: sparkle 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            100% {
+                transform: translateX(-100px) translateY(-100px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-tech);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--spark-white) 0%, var(--forge-orange) 50%, var(--forge-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-sm);
+            color: var(--metal-silver);
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: var(--space-xl);
+            color: var(--metal-silver);
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, var(--forge-orange), var(--forge-yellow));
+            color: var(--spark-white);
+            padding: var(--space-md) var(--space-xl);
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-tech);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-heavy);
+            letter-spacing: 1px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: var(--space-2xl) 0;
+            background: var(--spark-white);
+        }
+
+        .section-title {
+            font-family: var(--font-tech);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            color: var(--steel-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--forge-orange), var(--forge-yellow));
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .service-card {
+            background: var(--spark-white);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--metal-silver);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--forge-orange), var(--forge-yellow));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--forge-orange);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--forge-orange);
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .service-title {
+            font-family: var(--font-tech);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--steel-dark);
+        }
+
+        .service-description {
+            color: var(--steel-medium);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: var(--space-md);
+        }
+
+        .service-features li {
+            padding: var(--space-xs) 0;
+            color: var(--steel-medium);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .service-features li::before {
+            content: '⚡';
+            color: var(--forge-orange);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: var(--space-2xl) 0;
+            background: linear-gradient(135deg, var(--metal-silver) 0%, var(--spark-white) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-tech);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--steel-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--steel-medium);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-md);
+            background: var(--spark-white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .stat-number {
+            font-family: var(--font-tech);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--forge-orange);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--steel-medium);
+            font-weight: 600;
+            margin-top: var(--space-xs);
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--steel-dark), var(--iron-gray));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forge-orange);
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '⚒️🔥🏗️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) translateY(0px);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) translateY(-20px);
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--space-2xl) 0;
+            background: var(--iron-black);
+            color: var(--spark-white);
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: var(--spark-white);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-2xl) 0;
+        }
+
+        .contact-item {
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            border-color: var(--forge-orange);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--forge-orange);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-title {
+            font-family: var(--font-tech);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--spark-white);
+        }
+
+        .contact-detail {
+            color: var(--metal-silver);
+            font-size: 1.1rem;
+        }
+
+        .contact-cta {
+            margin-top: var(--space-xl);
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, var(--forge-orange), var(--forge-yellow));
+            color: var(--spark-white);
+            padding: var(--space-md) var(--space-xl);
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-tech);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-heavy);
+            margin: 0 var(--space-sm);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            padding: var(--space-xl) 0 var(--space-lg);
+            background: var(--steel-dark);
+            color: var(--metal-silver);
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-logo {
+            font-family: var(--font-tech);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--forge-orange);
+            margin-bottom: var(--space-sm);
+            letter-spacing: 2px;
+        }
+
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--steel-medium);
+            padding-top: var(--space-lg);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                text-align: center;
+                padding: var(--space-xl) 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .contact-btn {
+                display: block;
+                margin: var(--space-sm) 0;
+                text-align: center;
+            }
+
+            .portfolio-content {
+                display: flow !important;
+                text-align: center;
+            }
+
+            .portfolio-info {
+                order: 2;
+            }
+
+            .portfolio-preview {
+                order: 1;
+            }
+
+            .sample-works {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+
+            .work-item {
+                font-size: 0.8rem;
+                padding: var(--space-xs);
+            }
+
+            .work-icon {
+                font-size: 1.2rem;
+            }
+
+            .instagram-placeholder {
+                padding: var(--space-lg);
+            }
+
+            .instagram-large-icon {
+                font-size: 3rem;
+            }
+
+            .instagram-placeholder h3 {
+                font-size: 1.5rem;
+            }
+
+            .portfolio-features {
+                max-width: 400px;
+                margin: 0 auto var(--space-xl);
+            }
+
+            .portfolio-features li {
+                font-size: 1rem;
+                padding: var(--space-xs) 0;
+            }
+
+            .portfolio-info h3 {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-bottom: var(--space-md);
+                margin-top: 1.5rem;
+            }
+
+            .social-proof {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .container {
+                padding: 0 var(--space-sm);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: var(--space-2xl) 0;
+            background: var(--spark-white);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--steel-medium);
+            margin-bottom: var(--space-xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            margin-top: var(--space-xl);
+        }
+
+        .portfolio-preview {
+            display: flex;
+            justify-content: center;
+        }
+
+        .instagram-embed {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .instagram-placeholder {
+            background: linear-gradient(135deg, #E1306C, #FD1D1D, #F77737, #FCAF45);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            text-align: center;
+            color: var(--spark-white);
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .instagram-placeholder>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .instagram-large-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .instagram-placeholder h3 {
+            font-family: var(--font-tech);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .instagram-placeholder p {
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+        }
+
+        .sample-works {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
+        }
+
+        .work-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--space-sm);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .work-item:hover::before {
+            left: 100%;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .work-icon {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover .work-icon {
+            transform: rotateY(360deg) scale(1.2);
+            color: var(--forge-yellow);
+        }
+
+        .instagram-cta {
+            background: rgba(255, 255, 255, 0.9);
+            color: #E1306C;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(225, 48, 108, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .instagram-cta:hover::before {
+            left: 100%;
+        }
+
+        .instagram-cta:hover {
+            background: var(--spark-white);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(225, 48, 108, 0.4);
+            color: #C41E3A;
+        }
+
+        .instagram-cta:hover i {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        .instagram-cta i {
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-info h3 {
+            font-family: var(--font-tech);
+            font-size: 1.8rem;
+            color: var(--steel-dark);
+            margin-bottom: var(--space-lg);
+        }
+
+        .portfolio-features {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .portfolio-features li {
+            padding: var(--space-sm) 0;
+            color: var(--steel-medium);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 2px 0;
+        }
+
+        .portfolio-features li:hover {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--steel-dark);
+            transform: translateX(10px);
+            padding-left: var(--space-md);
+        }
+
+        .portfolio-features i {
+            color: var(--forge-orange);
+            font-size: 1.2rem;
+            width: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-features li:hover i {
+            transform: scale(1.2) rotate(15deg);
+            color: var(--forge-yellow);
+        }
+
+        .social-proof {
+            background: linear-gradient(135deg, var(--metal-silver), var(--spark-white));
+            padding: var(--space-lg);
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--forge-orange);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .social-proof:hover::before {
+            transform: translateX(100%);
+        }
+
+        .social-proof:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: var(--forge-yellow);
+            background: linear-gradient(135deg, var(--spark-white), var(--metal-silver));
+        }
+
+        .follower-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            font-family: var(--font-tech);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--steel-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .follower-count i {
+            font-size: 1.5rem;
+            color: #E1306C;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(135deg, #E1306C, #FD1D1D) !important;
+        }
+
+        .instagram-btn:hover {
+            background: linear-gradient(135deg, #C41E3A, #E1306C) !important;
+        }
+
+
+
+        /* Industrial Grid Pattern */
+        .grid-bg {
+            position: relative;
+        }
+
+        .grid-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(45, 55, 72, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(45, 55, 72, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#inicio" class="logo">
+                    <i class="fas fa-industry logo-icon"></i>
+                    PQ METALÚRGICA
+                </a>
+                <nav class="nav-menu">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#portafolio">Portafolio</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>FORJANDO EL FUTURO EN METAL</h1>
+                <p class="hero-subtitle">Estructuras Metálicas & Mobiliario a Medida</p>
+                <p class="hero-description">
+                    Transformamos ideas en realidades de acero. Especialistas en fabricación de estructuras metálicas
+                    y mobiliario único, diseñado y fabricado completamente a la medida de tus necesidades.
+                </p>
+                <a href="#contacto" class="hero-cta">
+                    <i class="fas fa-hammer"></i>
+                    SOLICITAR COTIZACIÓN
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services grid-bg">
+        <div class="container">
+            <h2 class="section-title fade-in">NUESTROS SERVICIOS</h2>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-building service-icon"></i>
+                    <h3 class="service-title">ESTRUCTURAS METÁLICAS</h3>
+                    <p class="service-description">
+                        Diseñamos y fabricamos estructuras metálicas robustas y duraderas para construcción,
+                        industria y arquitectura moderna.
+                    </p>
+                    <ul class="service-features">
+                        <li>Estructuras para techos y cubiertas</li>
+                        <li>Marcos y esqueletos de edificios</li>
+                        <li>Escaleras metálicas industriales</li>
+                        <li>Pasarelas y plataformas de trabajo</li>
+                        <li>Estructuras para naves industriales</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <i class="fas fa-couch service-icon"></i>
+                    <h3 class="service-title">MOBILIARIO A MEDIDA</h3>
+                    <p class="service-description">
+                        Creamos mobiliario único combinando funcionalidad, estética y durabilidad.
+                        Cada pieza es diseñada específicamente para tu espacio.
+                    </p>
+                    <ul class="service-features">
+                        <li>Mesas industriales personalizadas</li>
+                        <li>Estanterías y sistemas de almacenaje</li>
+                        <li>Sillas y bancos metálicos</li>
+                        <li>Mobiliario de oficina industrial</li>
+                        <li>Elementos decorativos únicos</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h3 class="service-title">FABRICACIÓN ESPECIALIZADA</h3>
+                    <p class="service-description">
+                        Servicios completos de metalurgia con tecnología de vanguardia y
+                        acabados profesionales de alta calidad.
+                    </p>
+                    <ul class="service-features">
+                        <li>Soldadura profesional TIG/MIG</li>
+                        <li>Corte y plegado de precisión</li>
+                        <li>Tratamientos anticorrosivos</li>
+                        <li>Pintura electrostática</li>
+                        <li>Instalación y montaje</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>EXPERIENCIA Y CALIDAD</h2>
+                    <p>
+                        En PQ METALÚRGICA nos especializamos en la fabricación de estructuras metálicas
+                        y mobiliario único, combinando técnicas tradicionales con tecnología moderna
+                        para garantizar resultados excepcionales.
+                    </p>
+                    <p>
+                        Cada proyecto es una oportunidad de demostrar nuestro compromiso con la excelencia,
+                        la durabilidad y el diseño funcional. Trabajamos mano a mano con nuestros clientes
+                        desde la conceptualización hasta la instalación final.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Proyectos Completados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfacción del Cliente</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Soporte Técnico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual fade-in">
+                    <div class="about-image">
+                        <i class="fas fa-industry" style="font-size: 4rem; color: var(--forge-orange);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portafolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">NUESTROS TRABAJOS</h2>
+            <p class="section-subtitle fade-in">
+                Explora nuestro portafolio completo de estructuras metálicas y mobiliario a medida en Instagram
+            </p>
+
+            <div class="portfolio-content">
+                <div class="portfolio-preview fade-in">
+                    <div class="instagram-embed">
+                        <div class="instagram-placeholder">
+                            <i class="fab fa-instagram instagram-large-icon"></i>
+                            <h3>@pq_metalurgica</h3>
+                            <p>Mira nuestros trabajos más recientes</p>
+                            <div class="sample-works">
+                                <div class="work-item">
+                                    <i class="fas fa-industry work-icon"></i>
+                                    <span>Estructuras Industriales</span>
+                                </div>
+                                <div class="work-item">
+                                    <i class="fas fa-chair work-icon"></i>
+                                    <span>Mobiliario de Diseño</span>
+                                </div>
+                                <div class="work-item">
+                                    <i class="fas fa-stairs work-icon"></i>
+                                    <span>Escaleras Metálicas</span>
+                                </div>
+                                <div class="work-item">
+                                    <i class="fas fa-door-open work-icon"></i>
+                                    <span>Puertas y Marcos</span>
+                                </div>
+                            </div>
+                            <a href="https://www.instagram.com/pq_metalurgica/" target="_blank" class="instagram-cta">
+                                <i class="fab fa-instagram"></i>
+                                VER PORTAFOLIO COMPLETO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-info fade-in">
+                    <h3>Síguenos para ver:</h3>
+                    <ul class="portfolio-features">
+                        <li><i class="fas fa-camera"></i> Procesos de fabricación en tiempo real</li>
+                        <li><i class="fas fa-tools"></i> Técnicas de soldadura profesional</li>
+                        <li><i class="fas fa-drafting-compass"></i> Diseños únicos y personalizados</li>
+                        <li><i class="fas fa-medal"></i> Proyectos terminados y entregas</li>
+                        <li><i class="fas fa-users"></i> Testimonios de clientes satisfechos</li>
+                        <li><i class="fas fa-lightbulb"></i> Ideas e inspiración para tus proyectos</li>
+                    </ul>
+
+                    <div class="social-proof"
+                        onclick="window.open('https://www.instagram.com/pq_metalurgica/', '_blank')"
+                        style="cursor: pointer;">
+                        <div class="follower-count">
+                            <i class="fab fa-instagram"></i>
+                            <span>Síguenos en Instagram</span>
+                        </div>
+                        <p>Únete a nuestra comunidad y mantente al día con nuestros últimos trabajos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">CONTACTANOS</h2>
+
+            <div class="contact-info">
+                <div class="contact-item fade-in"
+                    onclick="window.open('https://wa.me/59894510155?text=Hola%20PQ%20METALÚRGICA,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20estructuras%20metálicas%20y%20mobiliario%20a%20medida.', '_blank')"
+                    style="cursor: pointer;">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <h3 class="contact-title">WHATSAPP</h3>
+                    <p class="contact-detail">
+                        094 510 155<br>
+                        Escríbenos ahora
+                    </p>
+                </div>
+
+                <div class="contact-item fade-in" onclick="window.open('tel:094510155', '_self')"
+                    style="cursor: pointer;">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3 class="contact-title">TELÉFONO</h3>
+                    <p class="contact-detail">
+                        094 510 155<br>
+                        Si preferís llamanos
+                    </p>
+                </div>
+
+                <div class="contact-item fade-in"
+                    onclick="window.open('mailto:pabloquartino2011@gmail.com?subject=Consulta%20sobre%20estructuras%20metálicas%20-%20PQ%20METALÚRGICA&body=Hola,%0A%0AMe%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20estructuras%20metálicas%20y%20mobiliario%20a%20medida.%0A%0AGracias.', '_self')"
+                    style="cursor: pointer;">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3 class="contact-title">EMAIL</h3>
+                    <p class="contact-detail">
+                        pabloquartino2011@gmail.com<br>
+                        Escríbenos sobre tu proyecto
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-cta fade-in">
+                <a href="https://wa.me/59894510155?text=Hola%20PQ%20METALÚRGICA,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20estructuras%20metálicas%20y%20mobiliario%20a%20medida."
+                    target="_blank" class="contact-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    ESCRIBIR WHATSAPP
+                </a>
+                <a href="https://www.instagram.com/pq_metalurgica/" target="_blank" class="contact-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    VER TRABAJOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">PQ METALÚRGICA</div>
+                <p class="footer-text">
+                    Especializados en fabricación de estructuras metálicas y mobiliario único,
+                    diseñado y fabricado completamente a la medida. Calidad, durabilidad y diseño
+                    en cada proyecto.
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PQ METALÚRGICA. Todos los derechos reservados.</p>
+                <p>Montevideo, Uruguay | Tel: 094 510 155 | Email: pabloquartino2011@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 32, 44, 0.98)';
+            } else {
+                header.style.background = 'rgba(26, 32, 44, 0.95)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+
+</html>
