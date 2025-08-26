@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster:wght@400&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             /* Color System */
@@ -542,7 +543,203 @@
             color: var(--text-light);
         }
 
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Background patterns */
+        .bg-pattern-light {
+            position: relative;
+        }
+
+        .bg-pattern-light::before {
+            content: "🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒 🍔 🥬 🍅 🥕 🧄 🫑 🌿 🥒";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            font-size: 92px;
+            color: rgba(196, 30, 58, 0.18);
+            pointer-events: none;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 0;
+            animation: slide-right 120s linear infinite;
+            overflow: hidden;
+        }
+
+        .bg-pattern-white {
+            position: relative;
+        }
+
+        .bg-pattern-white::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200%;
+            height: 100%;
+            font-size: 92px;
+            color: rgba(15, 23, 42, 0.15);
+            pointer-events: none;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 0;
+            animation: slide-left 120s linear infinite;
+            overflow: hidden;
+        }
+
+        @keyframes slide-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        @keyframes slide-left {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Ensure content stays above pattern */
+        .bg-pattern-light > *,
+        .bg-pattern-white > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Promotional Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+            color: white;
+            padding: var(--space-md) 0;
+            text-align: center;
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .promo-banner .container {
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .promo-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .promo-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: var(--text-lg);
+            margin: 0;
+        }
+
+        .promo-price {
+            font-family: 'Lobster', cursive;
+            font-size: var(--text-2xl);
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .promo-cta {
+            background: white;
+            color: var(--primary-orange);
+            padding: 8px 20px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: var(--text-sm);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+
+        .promo-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+            background: #FFF8E1;
+        }
+
+        .promo-close {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .promo-close:hover {
+            opacity: 1;
+        }
+
+        .promo-banner.hidden {
+            display: none;
+        }
+
+        /* Adjust hero padding to account for promo banner */
+        .hero {
+            padding: 170px 0 80px;
+        }
+
         /* Responsive */
+        @media (max-width: 768px) {
+            .promo-banner {
+                top: 80px;
+                padding: var(--space-sm) 0;
+            }
+
+            .promo-content {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+
+            .promo-text {
+                font-size: var(--text-base);
+            }
+
+            .promo-price {
+                font-size: var(--text-xl);
+            }
+
+            .hero {
+                padding: 160px 0 80px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: var(--text-3xl);
@@ -597,8 +794,20 @@
         </div>
     </header>
 
+    <!-- Promotional Banner -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="container">
+            <button class="promo-close" onclick="closeBanner()" aria-label="Cerrar banner">&times;</button>
+            <div class="promo-content">
+                <span class="promo-text">¡OFERTA ESPECIAL!</span>
+                <span class="promo-price">6 Burgers x $500</span>
+                <a href="https://wa.me/59891601090?text=¡Hola! Quiero aprovechar la oferta de 6 burgers por $500" class="promo-cta" target="_blank">¡Quiero mi combo!</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero bg-pattern-light">
         <div class="container">
             <h1>Hamburguesas que alimentan tu cuerpo y tu conciencia</h1>
             <p>Descubrí el sabor auténtico de las hamburguesas 100% veganas. Hechas con amor, ingredientes naturales y sin comprometer el planeta.</p>
@@ -610,7 +819,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about bg-pattern-white">
         <div class="container">
             <h2 class="section-title">Más que hamburguesas, es un estilo de vida</h2>
             <p class="section-subtitle">En Pecas Burgers creemos que comer bien no significa renunciar al sabor. Nuestras hamburguesas veganas están cargadas de proteínas vegetales, fibra y todos los nutrientes que tu cuerpo necesita.</p>
@@ -642,7 +851,7 @@
     </section>
 
     <!-- Products Section -->
-    <section class="products" id="productos">
+    <section class="products bg-pattern-light" id="productos">
         <div class="container">
             <h2 class="section-title">Nuestras Estrellas Veganas</h2>
             
@@ -701,7 +910,7 @@
     </section>
 
     <!-- Process -->
-    <section class="process">
+    <section class="process bg-pattern-white">
         <div class="container">
             <h2 class="section-title">Pedí en 3 pasos súper fáciles</h2>
             
@@ -737,7 +946,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact" id="contacto">
+    <section class="contact bg-pattern-light" id="contacto">
         <div class="container">
             <h2 class="section-title">¿Listo para la mejor hamburguesa vegana de tu vida?</h2>
             
@@ -762,7 +971,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonios">
+    <section class="testimonials bg-pattern-white" id="testimonios">
         <div class="container">
             <h2 class="section-title">Lo que dicen nuestros clientes</h2>
             
@@ -816,5 +1025,51 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        function closeBanner() {
+            const banner = document.getElementById('promoBanner');
+            banner.classList.add('hidden');
+            
+            // Adjust hero padding when banner is closed
+            const hero = document.querySelector('.hero');
+            if (window.innerWidth <= 768) {
+                hero.style.paddingTop = '120px';
+            } else {
+                hero.style.paddingTop = '120px';
+            }
+        }
+
+        // Enhanced smooth scrolling with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const promoBanner = document.getElementById('promoBanner');
+                    const bannerHeight = promoBanner && !promoBanner.classList.contains('hidden') 
+                        ? promoBanner.offsetHeight : 0;
+                    
+                    const offsetTop = target.offsetTop - headerHeight - bannerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
