@@ -91,27 +91,30 @@
     <a href="#hero" class="nav-logo">&lt;<span>geangu</span> /&gt;</a>
 
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#what-i-do">What I Do</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#beyond">Beyond Code</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#what-i-do" data-i18n="nav.what-i-do">What I Do</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#beyond" data-i18n="nav.beyond">Beyond Code</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">ES</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#what-i-do" class="mobile-link">What I Do</a>
-    <a href="#skills" class="mobile-link">Skills</a>
-    <a href="#beyond" class="mobile-link">Beyond Code</a>
-    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#about" class="mobile-link" data-i18n="nav.about">About</a>
+    <a href="#what-i-do" class="mobile-link" data-i18n="nav.what-i-do">What I Do</a>
+    <a href="#skills" class="mobile-link" data-i18n="nav.skills">Skills</a>
+    <a href="#beyond" class="mobile-link" data-i18n="nav.beyond">Beyond Code</a>
+    <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
   </div>
 
   <!-- Side social links (desktop) -->
@@ -125,20 +128,20 @@
   <!-- ==================== HERO ==================== -->
   <section id="hero">
     <div class="hero-content">
-      <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100">Hi, my name is</p>
+      <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100" data-i18n="hero.greeting">Hi, my name is</p>
       <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">Andrés Gutiérrez.</h1>
-      <h2 class="hero-title" data-aos="fade-up" data-aos-delay="300">I build things for the web.</h2>
-      <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+      <h2 class="hero-title" data-aos="fade-up" data-aos-delay="300" data-i18n="hero.title">I build things for the web.</h2>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="400" data-i18n-html="hero.description">
         I'm a Telematics Engineer and Data Systematization Technologist from
         <strong>Universidad Distrital Francisco José de Caldas</strong>.
         I build web and mobile applications with a focus on performance, clean code, and great developer experience.
       </p>
       <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
         <a href="#about" class="btn-primary">
-          <i class="fa fa-user"></i> About me
+          <i class="fa fa-user"></i> <span data-i18n="hero.btn-about">About me</span>
         </a>
         <a href="#contact" class="btn-secondary">
-          <i class="fa fa-envelope"></i> Say hi
+          <i class="fa fa-envelope"></i> <span data-i18n="hero.btn-contact">Say hi</span>
         </a>
       </div>
     </div>
@@ -154,24 +157,24 @@
   <section id="about">
     <div class="section-header" data-aos="fade-right">
       <span class="section-number">01.</span>
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title" data-i18n="section.about">About Me</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="about-grid">
       <div class="about-text" data-aos="fade-right" data-aos-delay="100">
-        <p>
+        <p data-i18n-html="about.p1">
           I love software development and strive to learn something new every day.
           I develop <strong>web and mobile applications</strong> using Go, JavaScript, Java, Python, and Groovy,
           with experience in PostgreSQL, MySQL, SQL Server, and Oracle.
         </p>
-        <p>
+        <p data-i18n-html="about.p2">
           My main stack is <strong>Go</strong>, where I work with frameworks like Gin, Echo, Fiber, and Chi,
           along with GORM, grpc-go, and Cobra. I also have experience with Node.js,
           Django, and Flask. I'm comfortable across macOS, Linux, and Windows, and proficient with
           Git, AWS, GCP, Docker, and Kubernetes.
         </p>
-        <p>
+        <p data-i18n="about.p3">
           When I'm not coding, you'll find me exploring new technologies, contributing to open-source,
           or looking for the next interesting engineering challenge to solve.
         </p>
@@ -188,26 +191,26 @@
   <section id="what-i-do">
     <div class="section-header" data-aos="fade-right">
       <span class="section-number">02.</span>
-      <h2 class="section-title">What I Do</h2>
+      <h2 class="section-title" data-i18n="section.what-i-do">What I Do</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="services-grid">
       <div class="service-card" data-aos="fade-up" data-aos-delay="100">
         <div class="service-icon"><i class="fa fa-globe"></i></div>
-        <h3>Web Development</h3>
+        <h3 data-i18n="service.web">Web Development</h3>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-icon"><i class="fa fa-mobile"></i></div>
-        <h3>Mobile Development</h3>
+        <h3 data-i18n="service.mobile">Mobile Development</h3>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="300">
         <div class="service-icon"><i class="fa fa-laptop"></i></div>
-        <h3>Desktop Software</h3>
+        <h3 data-i18n="service.desktop">Desktop Software</h3>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="400">
         <div class="service-icon"><i class="fa fa-server"></i></div>
-        <h3>Infrastructure</h3>
+        <h3 data-i18n="service.infra">Infrastructure</h3>
       </div>
     </div>
   </section>
@@ -216,13 +219,13 @@
   <section id="skills">
     <div class="section-header" data-aos="fade-right">
       <span class="section-number">03.</span>
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title" data-i18n="section.skills">Skills</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="skills-grid">
       <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
-        <h4><i class="fa fa-code"></i> Languages</h4>
+        <h4><i class="fa fa-code"></i> <span data-i18n="skills.languages">Languages</span></h4>
         <div class="skill-tags">
           <span class="skill-tag">Go</span>
           <span class="skill-tag">JavaScript</span>
@@ -235,7 +238,7 @@
       </div>
 
       <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
-        <h4><i class="fa fa-cubes"></i> Frameworks</h4>
+        <h4><i class="fa fa-cubes"></i> <span data-i18n="skills.frameworks">Frameworks</span></h4>
         <div class="skill-tags">
           <span class="skill-tag">Gin</span>
           <span class="skill-tag">Echo</span>
@@ -248,7 +251,7 @@
       </div>
 
       <div class="skill-group" data-aos="fade-up" data-aos-delay="400">
-        <h4><i class="fa fa-database"></i> Databases</h4>
+        <h4><i class="fa fa-database"></i> <span data-i18n="skills.databases">Databases</span></h4>
         <div class="skill-tags">
           <span class="skill-tag">PostgreSQL</span>
           <span class="skill-tag">MySQL</span>
@@ -259,7 +262,7 @@
       </div>
 
       <div class="skill-group" data-aos="fade-up" data-aos-delay="500">
-        <h4><i class="fa fa-cogs"></i> Tools &amp; DevOps</h4>
+        <h4><i class="fa fa-cogs"></i> <span data-i18n="skills.tools">Tools &amp; DevOps</span></h4>
         <div class="skill-tags">
           <span class="skill-tag">Git</span>
           <span class="skill-tag">GitHub</span>
@@ -279,47 +282,47 @@
   <section id="beyond">
     <div class="section-header" data-aos="fade-right">
       <span class="section-number">04.</span>
-      <h2 class="section-title">Beyond Code</h2>
+      <h2 class="section-title" data-i18n="section.beyond">Beyond Code</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="beyond-grid">
       <div class="beyond-text" data-aos="fade-right" data-aos-delay="100">
-        <p>
+        <p data-i18n-html="beyond.p1">
           When I step away from the terminal, you'll find me deep in a race weekend.
           I'm a passionate <strong>Formula 1</strong> fan and a proud
           <strong>Scuderia Ferrari</strong> supporter — the same obsession with precision
           engineering, split-second decisions, and relentless performance that drives the sport
           is what drives me as a developer.
         </p>
-        <p>
+        <p data-i18n="beyond.p2">
           From the raw speed at Monza to the strategy battles in Monaco, F1 is the perfect
           reminder that excellence lives in the details — and that going full throttle
           beats playing it safe.
         </p>
-        <p class="beyond-forza">Forza Ferrari. <span class="accent-dot">&#9632;</span></p>
+        <p class="beyond-forza"><span data-i18n="beyond.forza">Forza Ferrari.</span> <span class="accent-dot">&#9632;</span></p>
       </div>
 
       <div class="beyond-facts" data-aos="fade-left" data-aos-delay="200">
         <div class="fact-card">
           <i class="fa fa-trophy fact-icon"></i>
           <div>
-            <span class="fact-label">Favourite Team</span>
-            <span class="fact-value">Scuderia Ferrari</span>
+            <span class="fact-label" data-i18n="beyond.fact1.label">Favourite Team</span>
+            <span class="fact-value" data-i18n="beyond.fact1.value">Scuderia Ferrari</span>
           </div>
         </div>
         <div class="fact-card">
           <i class="fa fa-flag fact-icon"></i>
           <div>
-            <span class="fact-label">Favourite Circuit</span>
-            <span class="fact-value">Monza — Temple of Speed</span>
+            <span class="fact-label" data-i18n="beyond.fact2.label">Favourite Circuit</span>
+            <span class="fact-value" data-i18n="beyond.fact2.value">Monza — Temple of Speed</span>
           </div>
         </div>
         <div class="fact-card">
           <i class="fa fa-fire fact-icon"></i>
           <div>
-            <span class="fact-label">What I love about it</span>
-            <span class="fact-value">Engineering + Strategy + Speed</span>
+            <span class="fact-label" data-i18n="beyond.fact3.label">What I love about it</span>
+            <span class="fact-value" data-i18n="beyond.fact3.value">Engineering + Strategy + Speed</span>
           </div>
         </div>
       </div>
@@ -329,9 +332,9 @@
   <!-- ==================== CONTACT ==================== -->
   <section id="contact">
     <div class="contact-wrapper" data-aos="fade-up">
-      <p class="contact-label">05. What's next?</p>
-      <h2 class="contact-title">Get In Touch</h2>
-      <p class="contact-description">
+      <p class="contact-label" data-i18n="contact.label">05. What's next?</p>
+      <h2 class="contact-title" data-i18n="contact.title">Get In Touch</h2>
+      <p class="contact-description" data-i18n="contact.description">
         Whether you have a project in mind, a question, or just want to say hi —
         my inbox is always open. I'll do my best to get back to you!
       </p>
@@ -352,7 +355,7 @@
       </div>
 
       <a href="mailto:geangu@gmail.com" class="btn-primary">
-        <i class="fa fa-paper-plane"></i> Send a message
+        <i class="fa fa-paper-plane"></i> <span data-i18n="contact.btn">Send a message</span>
       </a>
 
       <div class="contact-socials">
@@ -374,7 +377,122 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
-    // Init AOS
+    // ==================== TRANSLATIONS ====================
+    const translations = {
+      en: {
+        'nav.about':        'About',
+        'nav.what-i-do':    'What I Do',
+        'nav.skills':       'Skills',
+        'nav.beyond':       'Beyond Code',
+        'nav.contact':      'Contact',
+        'hero.greeting':    'Hi, my name is',
+        'hero.title':       'I build things for the web.',
+        'hero.description': "I'm a Telematics Engineer and Data Systematization Technologist from <strong>Universidad Distrital Francisco José de Caldas</strong>. I build web and mobile applications with a focus on performance, clean code, and great developer experience.",
+        'hero.btn-about':   'About me',
+        'hero.btn-contact': 'Say hi',
+        'section.about':    'About Me',
+        'about.p1':         'I love software development and strive to learn something new every day. I develop <strong>web and mobile applications</strong> using Go, JavaScript, Java, Python, and Groovy, with experience in PostgreSQL, MySQL, SQL Server, and Oracle.',
+        'about.p2':         "My main stack is <strong>Go</strong>, where I work with frameworks like Gin, Echo, Fiber, and Chi, along with GORM, grpc-go, and Cobra. I also have experience with Node.js, Django, and Flask. I'm comfortable across macOS, Linux, and Windows, and proficient with Git, AWS, GCP, Docker, and Kubernetes.",
+        'about.p3':         "When I'm not coding, you'll find me exploring new technologies, contributing to open-source, or looking for the next interesting engineering challenge to solve.",
+        'section.what-i-do':'What I Do',
+        'service.web':      'Web Development',
+        'service.mobile':   'Mobile Development',
+        'service.desktop':  'Desktop Software',
+        'service.infra':    'Infrastructure',
+        'section.skills':   'Skills',
+        'skills.languages': 'Languages',
+        'skills.frameworks':'Frameworks',
+        'skills.databases': 'Databases',
+        'skills.tools':     'Tools & DevOps',
+        'section.beyond':   'Beyond Code',
+        'beyond.p1':        "When I step away from the terminal, you'll find me deep in a race weekend. I'm a passionate <strong>Formula 1</strong> fan and a proud <strong>Scuderia Ferrari</strong> supporter — the same obsession with precision engineering, split-second decisions, and relentless performance that drives the sport is what drives me as a developer.",
+        'beyond.p2':        "From the raw speed at Monza to the strategy battles in Monaco, F1 is the perfect reminder that excellence lives in the details — and that going full throttle beats playing it safe.",
+        'beyond.forza':         'Forza Ferrari.',
+        'beyond.fact1.label':   'Favourite Team',
+        'beyond.fact1.value':   'Scuderia Ferrari',
+        'beyond.fact2.label':   'Favourite Circuit',
+        'beyond.fact2.value':   'Monza — Temple of Speed',
+        'beyond.fact3.label':   'What I love about it',
+        'beyond.fact3.value':   'Engineering + Strategy + Speed',
+        'contact.label':        "05. What's next?",
+        'contact.title':        'Get In Touch',
+        'contact.description':  "Whether you have a project in mind, a question, or just want to say hi — my inbox is always open. I'll do my best to get back to you!",
+        'contact.btn':          'Send a message',
+      },
+      es: {
+        'nav.about':        'Sobre Mí',
+        'nav.what-i-do':    'Qué Hago',
+        'nav.skills':       'Habilidades',
+        'nav.beyond':       'Más allá',
+        'nav.contact':      'Contacto',
+        'hero.greeting':    'Hola, mi nombre es',
+        'hero.title':       'Construyo cosas para la web.',
+        'hero.description': 'Soy Ingeniero en Telemática y Tecnólogo en Sistematización de Datos de la <strong>Universidad Distrital Francisco José de Caldas</strong>. Desarrollo aplicaciones web y móviles con enfoque en rendimiento, código limpio y buena experiencia de desarrollo.',
+        'hero.btn-about':   'Sobre mí',
+        'hero.btn-contact': 'Escríbeme',
+        'section.about':    'Sobre Mí',
+        'about.p1':         'Me apasiona el desarrollo de software y busco aprender algo nuevo cada día. Desarrollo <strong>aplicaciones web y móviles</strong> usando Go, JavaScript, Java, Python y Groovy, con experiencia en PostgreSQL, MySQL, SQL Server y Oracle.',
+        'about.p2':         'Mi stack principal es <strong>Go</strong>, donde trabajo con frameworks como Gin, Echo, Fiber y Chi, junto con GORM, grpc-go y Cobra. También tengo experiencia con Node.js, Django y Flask. Me desenvuelvo bien en macOS, Linux y Windows, y domino Git, AWS, GCP, Docker y Kubernetes.',
+        'about.p3':         'Cuando no estoy programando, me encuentro explorando nuevas tecnologías, contribuyendo al open-source o buscando el próximo reto de ingeniería interesante.',
+        'section.what-i-do':'Qué Hago',
+        'service.web':      'Desarrollo Web',
+        'service.mobile':   'Desarrollo Móvil',
+        'service.desktop':  'Software de Escritorio',
+        'service.infra':    'Infraestructura',
+        'section.skills':   'Habilidades',
+        'skills.languages': 'Lenguajes',
+        'skills.frameworks':'Frameworks',
+        'skills.databases': 'Bases de Datos',
+        'skills.tools':     'Herramientas & DevOps',
+        'section.beyond':   'Más allá del Código',
+        'beyond.p1':        'Cuando me alejo de la terminal, me encontrarás en plena jornada de carreras. Soy un apasionado de la <strong>Fórmula 1</strong> y un orgulloso seguidor de la <strong>Scuderia Ferrari</strong> — la misma obsesión por la ingeniería de precisión, las decisiones en fracciones de segundo y el rendimiento sin límites que impulsa el deporte es lo que me impulsa como desarrollador.',
+        'beyond.p2':        'Desde la velocidad brutal de Monza hasta las batallas de estrategia en Mónaco, la F1 es el recordatorio perfecto de que la excelencia vive en los detalles — y que ir a fondo siempre vale más que jugar sobre seguro.',
+        'beyond.forza':         'Forza Ferrari.',
+        'beyond.fact1.label':   'Equipo favorito',
+        'beyond.fact1.value':   'Scuderia Ferrari',
+        'beyond.fact2.label':   'Circuito favorito',
+        'beyond.fact2.value':   'Monza — Templo de la Velocidad',
+        'beyond.fact3.label':   'Lo que más me gusta',
+        'beyond.fact3.value':   'Ingeniería + Estrategia + Velocidad',
+        'contact.label':        '05. ¿Qué sigue?',
+        'contact.title':        'Hablemos',
+        'contact.description':  'Si tienes un proyecto en mente, una pregunta o simplemente quieres saludar — mi bandeja siempre está abierta. ¡Haré lo posible por responderte!',
+        'contact.btn':          'Enviar mensaje',
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+
+      // textContent elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      // innerHTML elements (contain HTML tags like <strong>)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      document.documentElement.lang = lang;
+      document.getElementById('langToggle').textContent = lang === 'en' ? 'ES' : 'EN';
+      localStorage.setItem('lang', lang);
+      currentLang = lang;
+    }
+
+    // Language toggle
+    document.getElementById('langToggle').addEventListener('click', () => {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
+    });
+
+    // Apply saved language on load
+    if (currentLang !== 'en') setLanguage(currentLang);
+
+    // ==================== AOS ====================
     AOS.init({
       duration: 600,
       easing: 'ease-out-cubic',
@@ -382,20 +500,20 @@
       offset: 60,
     });
 
-    // Preloader
+    // ==================== PRELOADER ====================
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.classList.add('hidden');
       setTimeout(() => preloader.remove(), 600);
     });
 
-    // Navbar scroll effect
+    // ==================== NAVBAR SCROLL ====================
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Mobile nav toggle
+    // ==================== MOBILE MENU ====================
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -404,7 +522,6 @@
       mobileMenu.classList.toggle('open');
     });
 
-    // Close mobile menu on link click
     document.querySelectorAll('.mobile-link').forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('open');
@@ -412,7 +529,7 @@
       });
     });
 
-    // Smooth active nav link highlight on scroll
+    // ==================== ACTIVE NAV HIGHLIGHT ====================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
