@@ -30,6 +30,10 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.018) 0, rgba(255,255,255,0.018) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.018) 0, rgba(255,255,255,0.018) 1px, transparent 0, transparent 50%);
+  background-size: 6px 6px;
   color: var(--text-secondary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -101,7 +105,7 @@ img {
 }
 
 #navbar.scrolled {
-  background: rgba(10, 25, 47, 0.95);
+  background: rgba(13, 13, 13, 0.97);
   backdrop-filter: blur(10px);
   padding: 16px 50px;
   box-shadow: 0 2px 20px rgba(2, 12, 27, 0.5);
@@ -250,6 +254,9 @@ img {
   align-items: center;
   padding: 0 150px;
   position: relative;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(220,0,0,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(220,0,0,0.04) 0%, transparent 45%);
 }
 
 .hero-content {
@@ -514,8 +521,9 @@ section {
 }
 
 .service-card {
-  background: var(--bg-primary);
+  background: linear-gradient(160deg, rgba(220,0,0,0.04) 0%, transparent 40%), var(--bg-primary);
   border: 1px solid var(--border);
+  border-top: 2px solid rgba(220,0,0,0.35);
   border-radius: 8px;
   padding: 36px 28px;
   text-align: center;
@@ -619,6 +627,93 @@ section {
 /* =============================================
    CONTACT
    ============================================= */
+
+/* ==================== BEYOND CODE ==================== */
+
+#beyond {
+  background: var(--bg-primary);
+}
+
+.beyond-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.beyond-text p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.beyond-text strong {
+  color: var(--text-primary);
+}
+
+.beyond-forza {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent) !important;
+  letter-spacing: 0.04em;
+  margin-top: 28px !important;
+}
+
+.accent-dot {
+  color: var(--accent);
+  font-size: 0.6rem;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.beyond-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fact-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: var(--transition);
+}
+
+.fact-card:hover {
+  background: var(--bg-secondary);
+  transform: translateX(4px);
+}
+
+.fact-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.fact-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ==================== CONTACT ==================== */
 
 #contact {
   background: var(--bg-secondary);
@@ -815,6 +910,11 @@ footer span {
 
   section {
     padding: 70px 28px;
+  }
+
+  .beyond-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   #navbar,

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <rect width="300" height="300" rx="16" fill="#0d0d0d"/>
+
+  <!-- Top red stripe -->
+  <rect x="0" y="0" width="300" height="10" rx="5" fill="#dc0000"/>
+
+  <!-- Subtle grid texture -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="300" height="300" rx="16" fill="url(#grid)"/>
+
+  <!-- Code brackets -->
+  <text
+    x="150"
+    y="175"
+    font-family="'Courier New', Courier, monospace"
+    font-size="90"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#f0f0f0"
+  >&lt;/&gt;</text>
+</svg>
