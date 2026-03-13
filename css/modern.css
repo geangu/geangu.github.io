@@ -166,21 +166,21 @@ img {
 
 .lang-toggle {
   background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  border-radius: 4px;
-  padding: 5px 11px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  border: none;
+  border-left: 1px solid var(--border);
+  padding: 0 0 0 16px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   cursor: pointer;
   font-family: var(--font-main);
   transition: var(--transition);
 }
 
 .lang-toggle:hover {
-  background: var(--accent);
-  color: var(--bg-primary);
+  color: var(--accent);
 }
 
 .nav-toggle {
