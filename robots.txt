@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tictactoe-privacy.html
+
+Sitemap: https://geangu.github.io/sitemap.xml
