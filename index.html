@@ -1,366 +1,324 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@geangu - Software Developer</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap&family=Playfair+Display:wght@400;500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <title>Andrés Gutiérrez — Software Developer</title>
+  <meta name="description" content="Andrés Gutiérrez (@geangu) — Telematics Engineer and Software Developer specializing in web and mobile applications." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS — Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome (local) -->
   <link rel="stylesheet" href="./css/fontawesome.css" />
-  <link rel="stylesheet" href="./css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="./css/magnific.css" />
-  <link rel="stylesheet" href="./css/themes.css" />
+
+  <!-- Modern styles -->
+  <link rel="stylesheet" href="./css/modern.css" />
+
   <link rel="shortcut icon" href="./images/asset/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-  <div class="preloader">
-    <div class="spinner">
-      <span class="cube1"></span><span class="cube2"></span>
-    </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-ring"></div>
   </div>
-  <!-- Main wrapper -->
-  <main id="main-wrappage">
-    <!-- Header -->
-    <header id="headder-mainpage">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="img-logowrap">
-            </div>
-          </div>
-        </div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">&lt;<span>geangu</span> /&gt;</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#what-i-do">What I Do</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#what-i-do" class="mobile-link">What I Do</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Side social links (desktop) -->
+  <div class="side-social">
+    <a href="https://www.linkedin.com/in/geangu/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+    <a href="https://github.com/geangu" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github"></i></a>
+    <a href="https://gitlab.com/geangu" target="_blank" rel="noopener" aria-label="GitLab"><i class="fa fa-gitlab"></i></a>
+    <a href="https://twitter.com/geangu" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100">Hi, my name is</p>
+      <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">Andrés Gutiérrez.</h1>
+      <h2 class="hero-title" data-aos="fade-up" data-aos-delay="300">I build things for the web.</h2>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+        I'm a Telematics Engineer and Data Systematization Technologist from
+        <strong>Universidad Distrital Francisco José de Caldas</strong>.
+        I build web and mobile applications with a focus on performance, clean code, and great developer experience.
+      </p>
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+        <a href="#about" class="btn-primary">
+          <i class="fa fa-user"></i> About me
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fa fa-envelope"></i> Say hi
+        </a>
       </div>
-    </header>
-    <!-- End header -->
-    <div class="menunavigation">
-      <nav>
-        <ul>
-          <li><a href="#hero-wrapsection">Home</a></li>
-          <li><a href="#about-me">About Me</a></li>
-          <li><a href="#cani-dowrap">My Skills</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact-section">Contact</a></li>
-        </ul>
-      </nav>
     </div>
-    <!-- Hero -->
-    <section id="hero-wrapsection">
-      <div class="container-fluid wrap-herosection">
-        <div class="row">
-          <div class="col">
-            <div class="wrap-herocontent">
-              <div class="left-miniside">
-                <!-- Social links -->
-                <div class="minisosmed">
-                  <ul class="sosmed-list">
-                    <li>
-                      <a href="https://www.linkedin.com/in/geangu/"><i class="fa fa-linkedin"
-                          aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/geangu"><i class="fa fa-github" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                      <a href="https://bitbucket.org/geangu/"><i class="fa fa-bitbucket" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                      <a href="https://gitlab.com/geangu"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                      <a href="https://twitter.com/geangu">
-                        <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="hero-slide">
-                <div id="detail-hero" class="owl-carousel owl-theme">
-                  <div class="item-detail">
-                    <h3>I'm Andrés Gutiérrez</h3>
-                    <p>
-                      Telematics Engineer and Data Systematization Technologist from the Francisco José de Caldas
-                      District University.
-                    </p>
-                  </div>
-                  <div class="item-detail">
-                    <h3>I'm a professional software developer</h3>
-                    <p>
-                      I build web and mobile applications using Java, Groovy, Go, JavaScript, PHP, and Python, and I
-                      work with PostgreSQL, MySQL, SQL Server, and Oracle databases.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="hero-imageslide">
-                <div class="wrap-togglemenu">
-                  <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-                <div class="overlayclose"></div>
-                <div class="navigationwrap">
-                  <div class="navn nav-prev">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                  </div>
-                  <div class="navn nav-next">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div id="image-hero" class="owl-carousel owl-theme">
-                  <div class="image-item" style="
-                        background: url('./images/hero/profile_2.png') no-repeat;
-                        background-size: cover;
-                      ">
-                    <div class="overlay"></div>
-                  </div>
-                  <div class="image-item" style="
-                        background: url('./images/hero/profile_3.png') no-repeat;
-                        background-size: cover;
-                      ">
-                    <div class="overlay"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+    <!-- Profile photo (desktop) -->
+    <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="400">
+      <img src="./images/hero/profile_2.png" alt="Andrés Gutiérrez" />
+      <div class="hero-image-border"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <div class="section-header" data-aos="fade-right">
+      <span class="section-number">01.</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+        <p>
+          I love software development and strive to learn something new every day.
+          I develop <strong>web and mobile applications</strong> using Go, JavaScript, Java, Python, and Groovy,
+          with experience in PostgreSQL, MySQL, SQL Server, and Oracle.
+        </p>
+        <p>
+          My main stack is <strong>Go</strong>, where I work with frameworks like Gin, Echo, Fiber, and Chi,
+          along with GORM, grpc-go, and Cobra. I also have experience with Node.js,
+          Django, and Flask. I'm comfortable across macOS, Linux, and Windows, and proficient with
+          Git, AWS, GCP, Docker, and Kubernetes.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new technologies, contributing to open-source,
+          or looking for the next interesting engineering challenge to solve.
+        </p>
+      </div>
+
+      <div class="about-image-wrap" data-aos="fade-left" data-aos-delay="200">
+        <img src="./images/hero/profile_1.jpg" alt="Andrés Gutiérrez" />
+        <div class="about-image-border"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT I DO ==================== -->
+  <section id="what-i-do">
+    <div class="section-header" data-aos="fade-right">
+      <span class="section-number">02.</span>
+      <h2 class="section-title">What I Do</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i class="fa fa-globe"></i></div>
+        <h3>Web Development</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i class="fa fa-mobile"></i></div>
+        <h3>Mobile Development</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon"><i class="fa fa-laptop"></i></div>
+        <h3>Desktop Software</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon"><i class="fa fa-server"></i></div>
+        <h3>Infrastructure</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills">
+    <div class="section-header" data-aos="fade-right">
+      <span class="section-number">03.</span>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+        <h4><i class="fa fa-code"></i> Languages</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Go</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Groovy</span>
         </div>
       </div>
-    </section>
-    <!-- End hero -->
-    <!-- About -->
-    <section id="about-me">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-6">
-            <div class="wrap-aboutinfo">
-              <h3>A short introduction</h3>
-              <h1 class="bigfont">About Me</h1>
-              <div class="image-about paralax" style="
-                    background: url('./images/hero/profile_1.jpg') no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                  "></div>
-              <div class="line-str">@geangu</div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-6">
-            <div class="wrap-aboutinfo-p">
-              <h3 class="title-h3">
-                I love software development and strive to learn something new every day.
-              </h3>
-              <p>
-                I develop web and mobile applications using Java, Groovy, Go, JavaScript, PHP, and Python, with
-                experience in PostgreSQL, MySQL, SQL Server, and Oracle.
-              </p>
-              <p>
-                I have worked with frameworks and tools such as Grails, Hibernate, JSF, JPA, Struts; Angular and
-                Node.js; Django and Flask; and Laravel. I'm comfortable with IDEs like IntelliJ IDEA, Eclipse, NetBeans,
-                and VS Code, across macOS, Linux, and Windows. I'm proficient with Git and SVN, AWS and DigitalOcean,
-                and deployment and networking.
-              </p>
-              <p>
-                Telematics Engineer and Data Systematization Technologist from the Francisco José de Caldas District
-                University.
-              </p>
-              <ul class="sosmed-list-about">
-                <li>
-                  <a href="https://www.linkedin.com/in/geangu/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/geangu"><i class="fa fa-github" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://bitbucket.org/geangu/"><i class="fa fa-bitbucket" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://gitlab.com/geangu"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/geangu">
-                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
+
+      <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+        <h4><i class="fa fa-cubes"></i> Frameworks</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Gin</span>
+          <span class="skill-tag">Echo</span>
+          <span class="skill-tag">Fiber</span>
+          <span class="skill-tag">Spring</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">Flask</span>
         </div>
       </div>
-    </section>
-    <!-- End about -->
-    <section id="cani-dowrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="headding">
-              <h3>What can I offer?</h3>
-              <h1 class="bigfont bigtwo">My Skills</h1>
-              <p>
-                Here are the areas where I can help your team deliver value.
-              </p>
-            </div>
-            <div id="ido-slide" class="owl-carousel">
-              <!-- Slide item -->
-              <div class="ido-wrap">
-                <div class="ido-icon">
-                  <i class="fa fa-globe" aria-hidden="true"></i>
-                  <p>Web development</p>
-                </div>
-              </div>
-              <!-- Slide item -->
-              <div class="ido-wrap">
-                <div class="ido-icon">
-                  <i class="fa fa-mobile" aria-hidden="true"></i>
-                  <p>Mobile development</p>
-                </div>
-              </div>
-              <!-- Slide item -->
-              <div class="ido-wrap">
-                <div class="ido-icon">
-                  <i class="fa fa-laptop" aria-hidden="true"></i>
-                  <p>Desktop software</p>
-                </div>
-              </div>
-              <!-- Slide item -->
-              <div class="ido-wrap">
-                <div class="ido-icon">
-                  <i class="fa fa-server" aria-hidden="true"></i>
-                  <p>Infrastructure</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
+      <div class="skill-group" data-aos="fade-up" data-aos-delay="400">
+        <h4><i class="fa fa-database"></i> Databases</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">BigQuery</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Oracle</span>
         </div>
       </div>
-    </section>
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="headding">
-              <h3>Technical Stack</h3>
-              <h1 class="bigfont bigtwo">Skills</h1>
-              <p>Technologies and tools I use to deliver robust software.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h4><i class="fa fa-code" aria-hidden="true"></i> Languages</h4>
-            <ul class="list-unstyled">
-              <li>Java</li>
-              <li>Go (Golang)</li>
-              <li>JavaScript / TypeScript</li>
-              <li>Python</li>
-              <li>PHP</li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h4><i class="fa fa-cubes" aria-hidden="true"></i> Frameworks</h4>
-            <ul class="list-unstyled">
-              <li>Spring, Grails, Hibernate</li>
-              <li>Angular, Node.js</li>
-              <li>Django, Flask</li>
-              <li>Laravel</li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h4><i class="fa fa-database" aria-hidden="true"></i> Databases</h4>
-            <ul class="list-unstyled">
-              <li>PostgreSQL</li>
-              <li>MySQL</li>
-              <li>SQL Server</li>
-              <li>Oracle</li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h4><i class="fa fa-cogs" aria-hidden="true"></i> Tools & DevOps</h4>
-            <ul class="list-unstyled">
-              <li>Git, GitHub, GitLab, Bitbucket</li>
-              <li>AWS, DigitalOcean</li>
-              <li>CI/CD, Docker (basics)</li>
-              <li>Linux, macOS, Windows</li>
-            </ul>
-          </div>
+
+      <div class="skill-group" data-aos="fade-up" data-aos-delay="500">
+        <h4><i class="fa fa-cogs"></i> Tools &amp; DevOps</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">GitLab</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Linux</span>
         </div>
       </div>
-    </section>
-    <!-- Contact -->
-    <section id="contact-section">
-      <div id="wrap-contact" class="container">
-        <div class="row">
-          <div class="col">
-            <div class="wrap-gapinfo">
-              <h3>Contact Me</h3>
-              <h1 class="bigfont">Say Hi</h1>
-            </div>
-          </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <div class="contact-wrapper" data-aos="fade-up">
+      <p class="contact-label">04. What's next?</p>
+      <h2 class="contact-title">Get In Touch</h2>
+      <p class="contact-description">
+        Whether you have a project in mind, a question, or just want to say hi —
+        my inbox is always open. I'll do my best to get back to you!
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <i class="fa fa-phone"></i>
+          <span>+598 92 870 707</span>
         </div>
-        <div id="contactinfowrap" class="row">
-          <div class="col-md-12 col-lg-12">
-            <div class="wrapdetailcontact">
-              <h2>Contact Me</h2>
-              <ul class="theservice contactdetail">
-                <li>
-                  <div class="lp-list">
-                    <i class="fa fa-phone" aria-hidden="true"></i> +598 92 870
-                    707
-                  </div>
-                </li>
-                <li>
-                  <div class="lp-list">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    geangu@gmail.com
-                  </div>
-                </li>
-                <li>
-                  <div class="lp-list">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    Montevideo, Uruguay
-                  </div>
-                </li>
-              </ul>
-              <ul class="sosmed-list-contact">
-                <li>
-                  <a href="https://www.linkedin.com/in/geangu/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/geangu"><i class="fa fa-github" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/geangu">
-                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="contact-item">
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:geangu@gmail.com">geangu@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-map-marker"></i>
+          <span>Montevideo, Uruguay</span>
         </div>
       </div>
-    </section>
-    <!-- End contact -->
-    <!-- Footer -->
-    <footer id="footer-section">
-      <div id="wrap-footer" class="container-fluid">
-        <div class="row">
-          <div class="col text-center thefoot">
-            <h4>geangu @2025</h4>
-          </div>
-        </div>
+
+      <a href="mailto:geangu@gmail.com" class="btn-primary">
+        <i class="fa fa-paper-plane"></i> Send a message
+      </a>
+
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/geangu/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/geangu" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://gitlab.com/geangu" target="_blank" rel="noopener" aria-label="GitLab"><i class="fa fa-gitlab"></i></a>
+        <a href="https://twitter.com/geangu" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
       </div>
-    </footer>
-    <!-- End footer -->
-  </main>
-  <!-- End main wrapper -->
-  <!-- Scripts -->
-  <script src="./javascript/jquery.js"></script>
-  <script src="./javascript/bootstrap.min.js"></script>
-  <script src="./javascript/proper.js"></script>
-  <script src="./javascript/owlcarousel.js"></script>
-  <script src="./javascript/simpleparralax.js"></script>
-  <script src="./javascript/magnific.js"></script>
-  <script src="./javascript/main.js"></script>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>Built by <span>@geangu</span> &mdash; 2026</p>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Init AOS
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60,
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.remove(), 600);
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Smooth active nav link highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+      });
+    });
+  </script>
+
 </body>
 
 </html>
