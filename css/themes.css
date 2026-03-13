@@ -679,15 +679,7 @@ iframe {
   position: relative;
 }
 
-.headding p:after {
-  content: "";
-  width: 1px;
-  height: 30px;
-  background: rgb(184, 176, 176);
-  position: absolute;
-  left: 50%;
-  bottom: -80px;
-}
+/* removed decorative after on heading paragraph to avoid empty marker */
 
 #ido-slide {
   position: relative;
