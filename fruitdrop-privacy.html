@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Privacidad - Fruit Drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de privacidad de Fruit Drop: un juego sin anuncios que no recopila ningún dato.">
+    <meta name="theme-color" content="#ffe8c2">
+    <link rel="icon" type="image/png" href="./images/asset/fruitdrop-icon.png">
+    <style>
+        :root {
+            --bg-top: #ffe8c2;
+            --bg-bottom: #ffd1a1;
+            --card: #fff7ea;
+            --wood: #e7a35b;
+            --wood-dark: #c97f36;
+            --text: #5a3a1a;
+            --text-soft: #7a5638;
+            --orange: #ff7b39;
+            --pink: #e0457b;
+            --green: #3fa34d;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 32px 16px 48px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            background-attachment: fixed;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: var(--card);
+            padding: 32px;
+            border: 4px solid var(--wood);
+            border-radius: 24px;
+            box-shadow: 0 8px 0 var(--wood-dark), 0 16px 40px rgba(120, 60, 0, 0.2);
+        }
+
+        .hero { text-align: center; }
+
+        .icon {
+            width: 168px;
+            height: 168px;
+            border-radius: 38px;
+            border: 4px solid var(--wood);
+            box-shadow: 0 6px 0 var(--wood-dark);
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 900;
+            margin: 20px 0 4px;
+            line-height: 1.2;
+        }
+
+        .updated {
+            color: var(--text-soft);
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        .fruits {
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            margin: 20px auto 8px;
+        }
+
+        .summary {
+            background: #fff;
+            border: 3px dashed var(--wood);
+            border-radius: 18px;
+            padding: 16px 20px;
+            margin: 20px 0 8px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .pills li {
+            background: var(--orange);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.85em;
+            padding: 6px 14px;
+            border-radius: 999px;
+            box-shadow: 0 3px 0 #c4501a;
+        }
+
+        .pills li:nth-child(2) { background: var(--pink); box-shadow: 0 3px 0 #a82c58; }
+        .pills li:nth-child(3) { background: var(--green); box-shadow: 0 3px 0 #2a7335; }
+
+        h2 {
+            font-size: 1.2em;
+            font-weight: 800;
+            margin: 28px 0 8px;
+            padding-left: 14px;
+            border-left: 6px solid var(--orange);
+        }
+
+        p {
+            line-height: 1.7;
+            margin: 0 0 12px;
+        }
+
+        a { color: var(--pink); font-weight: 700; }
+
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            color: var(--text-soft);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 16px 12px 32px; }
+            .container { padding: 24px 18px; border-radius: 20px; }
+            h1 { font-size: 1.6em; }
+            .icon { width: 132px; height: 132px; border-radius: 30px; }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="hero">
+            <img class="icon" src="./images/asset/fruitdrop-icon.png" alt="Ícono de Fruit Drop">
+            <h1>Política de Privacidad de Fruit Drop</h1>
+            <p class="updated">Última actualización: 16 de noviembre de 2026</p>
+            <img class="fruits" src="./images/asset/fruitdrop-fruits.png"
+                alt="Las 11 frutas de Fruit Drop, de la cereza a la sandía">
+        </div>
+
+        <div class="summary">
+            En pocas palabras: Fruit Drop no recopila, no envía y no comparte ningún dato tuyo. Solo tienes que
+            jugar 🍉
+            <ul class="pills">
+                <li>Sin anuncios</li>
+                <li>Sin recopilación de datos</li>
+                <li>Funciona sin internet</li>
+            </ul>
+        </div>
+
+        <h2>1. No recopilamos datos personales</h2>
+        <p>Fruit Drop no recopila ninguna información que pueda identificarte: ni tu nombre, ni tu correo
+            electrónico, ni tu ubicación, ni tu número de teléfono, ni ningún otro dato personal. No necesitas crear
+            una cuenta ni iniciar sesión para jugar.</p>
+
+        <h2>2. No recopilamos datos de uso</h2>
+        <p>Tus partidas son solo tuyas. Fruit Drop no rastrea tu actividad dentro de la aplicación: no registra las
+            partidas que juegas, tus puntuaciones ni el tiempo que pasas jugando. La aplicación no incluye servicios
+            de analítica ni de rastreo de terceros.</p>
+
+        <h2>3. Datos guardados solo en tu dispositivo</h2>
+        <p>Para que el juego recuerde tu progreso, Fruit Drop guarda en tu propio teléfono dos datos: tu
+            <strong>puntuación récord</strong> y si tienes el <strong>sonido activado o desactivado</strong>. Estos
+            datos nunca salen de tu dispositivo, y se borran al desinstalar la aplicación o al eliminar sus datos
+            desde los ajustes de Android.</p>
+
+        <h2>4. Sin permisos y sin conexión a internet</h2>
+        <p>Fruit Drop no solicita ningún permiso del dispositivo (cámara, micrófono, ubicación, contactos ni
+            archivos) y funciona completamente sin conexión a internet.</p>
+
+        <h2>5. Sin publicidad</h2>
+        <p>Fruit Drop no contiene ningún tipo de publicidad. Puedes disfrutar del juego sin interrupciones ni
+            anuncios de terceros.</p>
+
+        <h2>6. Sin compras dentro de la aplicación</h2>
+        <p>Fruit Drop no ofrece compras dentro de la aplicación y nunca te pedirá información de pago.</p>
+
+        <h2>7. Apta para todas las edades</h2>
+        <p>Como no recopilamos datos de ningún usuario y el juego no tiene contenido inapropiado, Fruit Drop es
+            segura para jugadores de todas las edades, incluidos los niños.</p>
+
+        <h2>8. Cambios en esta política de privacidad</h2>
+        <p>Podríamos actualizar esta política de privacidad de vez en cuando. Cualquier cambio se publicará en esta
+            misma página, junto con su fecha de actualización.</p>
+
+        <h2>9. Contáctanos</h2>
+        <p>Si tienes alguna pregunta sobre esta política de privacidad, puedes escribirnos a:
+            <a href="mailto:geangu@gmail.com">geangu@gmail.com</a></p>
+
+        <footer>🍒 Fruit Drop · Suelta, junta y crece 🍉</footer>
+    </main>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /tictactoe-privacy.html
+Disallow: /fruitdrop-privacy.html
 
 Sitemap: https://geangu.github.io/sitemap.xml
